@@ -2,7 +2,7 @@
 
 CSCI-599 Spring 2016 - Team 1, Assignment 1
 
-A Angular-D3 web application to visualize results gleaned from analysis on the Trec-Ploar-Dataset.
+An Angular-D3 web application to visualize results gleaned from analysis on the Trec-Ploar-Dataset.
 
 [Analysis](https://github.com/nithinkrishna/file-content-analyzer) results need to be copied into
 the `app/data/computed/{bfa|bfc|bfcc|fht}` folder.
