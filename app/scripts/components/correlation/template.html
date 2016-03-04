@@ -1,0 +1,33 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div c-char-chart></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <nvd3 options="options"
+            data="data"></nvd3>
+    </div>
+  </div>
+
+  <hr />
+  <div class="row" data-ng-show="exterems.length > 0">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>High Correlation (byte value)</th>
+            <th>Low Correlation (byte value)</th>
+          </tr>
+        </thead>
+        <tr data-ng-repeat="c in exterems">
+          <td>{{ c.name }}</td>
+          <td>{{ c.max[0] }}, {{ c.max[1] }}, {{ c.max[2] }}, {{ c.max[3] }}, {{ c.max[4] }}</td>
+          <td>{{ c.min[0] }}, {{ c.min[1] }}, {{ c.min[2] }}, {{ c.min[3] }}, {{ c.min[4] }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

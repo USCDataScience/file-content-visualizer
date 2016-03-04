@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>Byte Frequency Analysis (BFA)</h4>
+
+    <p>We've implemented BFA on each file type in the polar dataset. We computed the byte signatures
+       for 75% of the files in each type. You can view the byte signature for a given type by clicking
+       on the type in the bottom of the screen. You can select multiple types at a time. You can also zoom
+       into smaller regions. There is a character chart (just below) to correlate by readings
+       with text characters.</p>
+  </div>
+</div>
+
+<div class="row" data-ng-init="types = [ ]">
+  <div class="col-md-12">
+    <div c-signature data-types="types"></div>
+  </div>
+</div>
+
+<hr />
+<div class="row">
+  <div class="col-md-12">
+    <div c-type-list data-selected="types"></div>
+  </div>
+</div>

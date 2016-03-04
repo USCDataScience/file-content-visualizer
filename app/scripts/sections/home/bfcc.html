@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>Byte Frequency Cross-Correlation (BFCC)</h4>
+
+    <p>We've computed byte frequency cross-correlation on the BFA signatures computed for each type.
+       Matrix values which are 0 are displayed in white. Values which are 1 are displayed in black.
+       Values from 0 to 1 are displayed in varying shades of grey. Darker regions indicate closeness to 1.
+       Clicking on the type will load the cross-correlation visualization for the given type.
+       <b>Please note the visualization is slow to load</b>. It takes about 10 seconds to load once the type is clicked.
+       Only one correlation matrix can be viewed at a time.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div c-cross-correlation data-computed="type.key"></div>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-md-12">
+    <div c-type-list data-selected="type" data-multiple="'FALSE'"></div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>Byte Frequency Correlation (BFC)</h4>
+
+    <p>We've computed byte frequency correlation on all the file-types in the given polar dataset.
+       We computed the average correlation between the signature for each type (75% data set) and
+       a newly computed signature from the remaining data set. Values closer to 1 indicate high
+       correlation. As you click on a particular type a table appears below indicating the top bytes
+       which have the highest / lower correlation.</p>
+  </div>
+</div>
+
+<div class="row" data-ng-init="types = [ ]">
+  <div class="col-md-12">
+    <div c-correlation data-types="types"></div>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-md-12">
+    <div c-type-list data-selected="types"></div>
+  </div>
+</div>

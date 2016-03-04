@@ -1,0 +1,42 @@
+<div>
+  <div class="row">
+    <div class="col-md-6">
+      <h4 data-ng-bind="text[d1]"></h4>
+      <h5>({{s1 | number}})</h5>
+      <nvd3 options="options" data="ds1"></nvd3>
+
+    </div>
+
+    <div class="col-md-6">
+      <h4 data-ng-bind="text[d2]"></h4>
+      <h5>({{s2 | number}})</h5>
+      <nvd3 options="options" data="ds2"></nvd3>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <table class="table table-striped" at-table at-paginated at-list="diff" at-config="config">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td at-implicit at-sortable at-attribute="type" at-initial-sorting="asc" at-title="Type"></td>
+            <td at-sortable at-title="Meta">
+              <span class="label label-success" data-ng-if="item.d1 == 0 || (item.d2 - item.d1) / item.d2 * 100 > 95">New</span>
+              <span class="label label-warning" data-ng-if="item.d2 == 0 || (item.d1 - item.d2) / item.d1 * 100 > 95">Deprecated</span>
+              <span class="label label-default" data-ng-if="item.d1 == item.d2">Retained</span>
+            </td>
+            <td at-implicit at-sortable at-attribute="d1" at-title="D1-Count"></td>
+            <td at-implicit at-sortable at-attribute="d2" at-title="D2-Count"></td>
+            <td at-implicit at-sortable at-attribute="diff" at-title="Difference"
+                data-ng-class="{ 'text-success': item.diff > 0, 'text-danger': item.diff < 0 }"></td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

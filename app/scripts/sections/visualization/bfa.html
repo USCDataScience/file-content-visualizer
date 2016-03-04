@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>Byte Frequency Analysis (BFA)</h4>
+  </div>
+</div>
+
+<hr />
+
+<div class="row" data-ng-init="types = [ ]">
+  <div class="col-md-12">
+    <div c-signature data-types="types" data-computed="params.file"></div>
+  </div>
+</div>
+
+<hr />
+<div class="row">
+  <div class="col-md-12">
+    <div c-type-list data-selected="types"></div>
+  </div>
+</div>

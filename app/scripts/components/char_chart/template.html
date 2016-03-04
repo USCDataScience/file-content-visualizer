@@ -1,0 +1,10 @@
+<div style="overflow-y: scroll">
+  <table class="table table-striped">
+    <thead>
+      <th data-ng-repeat="b in byteSet" data-ng-bind="b"></th>
+    </thead>
+    <body>
+      <td data-ng-repeat="b in byteSet" data-ng-bind="fromCharCode(b)"></td>
+    </body>
+  </table>
+</div>

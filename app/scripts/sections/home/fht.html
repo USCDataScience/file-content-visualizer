@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>File Header Trailer Analysis (FHT)</h4>
+
+    <p>We've computed FHT matrices for all the file types in the data set. For each file type
+       we computed the fht matrix by aggregating 75% of the files in each type. You can view
+       fingerprints from multiple file types at a time. Each file type has a head/trail fingerprint.
+       The size of the blob is indicative of the strength of the byte in the fingerprint.
+       There is a character chart (just below) to correlate by readings with text characters.
+       Alter the URL to this page to alter the FHT-OFFSET. (ie) /8, /16 or /32.</p>
+  </div>
+</div>
+
+<div class="row" data-ng-init="types = [ ]">
+  <div class="col-md-12">
+    <div c-fht data-types="types" data-offset="params.offset"></div>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-12">
+    <div c-type-list data-selected="types"></div>
+  </div>
+</div>
