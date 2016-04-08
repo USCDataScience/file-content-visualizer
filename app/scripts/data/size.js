@@ -2,10 +2,10 @@ angular.module("c.data")
 
 .factory("c.data.Size", ["$resource", "$q",
   function($resource, $q){
-    var Resource = $resource("/data/size", { id: "@id" },{
+    var Resource = $resource(content.dataUrl("/data/size"), { id: "@id" },{
       cluster: {
         method: 'GET',
-        url: "/data/size/clusters.csv",
+        url: content.dataUrl("/data/size/clusters.csv"),
         transformResponse: function(response){
           var lines = response.split("\n");
           lines.pop();
@@ -21,7 +21,7 @@ angular.module("c.data")
       },
       summary: {
         method: 'GET',
-        url: "/data/size/summary",
+        url: content.dataUrl("/data/size/summary"),
         transformResponse: function(response){
           var parts = response.split("--------");
           parts.pop();

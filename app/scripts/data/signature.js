@@ -2,10 +2,10 @@ angular.module("c.data")
 
 .factory("c.data.Signature", ["$resource", "$q",
   function($resource, $q){
-    var Resource = $resource("/data/signatures/bfa", { type: "@type", file: "@file" },{
+    var Resource = $resource(content.dataUrl("/data/signatures/bfa"), { type: "@type", file: "@file" },{
       get: {
         method: 'GET',
-        url: "/data/signatures/bfa/:type",
+        url: content.dataUrl("/data/signatures/bfa/:type"),
         transformResponse: function(response){
           var parts = response.split(",");
           parts = _.map(parts, parseFloat)
@@ -18,7 +18,7 @@ angular.module("c.data")
 
       getComputed: {
         method: 'GET',
-        url: "/data/computed/bfa/:file",
+        url: content.dataUrl("/data/computed/bfa/:file"),
         transformResponse: function(response){
           var parts = response.split(",");
           parts = _.map(parts, parseFloat)

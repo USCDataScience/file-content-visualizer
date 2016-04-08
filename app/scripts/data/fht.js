@@ -2,10 +2,10 @@ angular.module("c.data")
 
 .factory("c.data.FHT", ["$resource", "$q",
   function($resource, $q){
-    var Resource = $resource("/data/fht", { type: "@type", file: "@file" },{
+    var Resource = $resource(content.dataUrl("/data/fht"), { type: "@type", file: "@file" },{
       getComputed: {
         method: 'GET',
-        url: "/data/computed/fht/:file",
+        url: content.dataUrl("/data/computed/fht/:file"),
         transformResponse: function(response){
           var parts = response.split("\n");
 
@@ -28,7 +28,7 @@ angular.module("c.data")
 
       get: {
         method: 'GET',
-        url: "/data/signatures/fht/:type",
+        url: content.dataUrl("/data/signatures/fht/:type"),
         transformResponse: function(response){
           var parts = response.split("\n");
 

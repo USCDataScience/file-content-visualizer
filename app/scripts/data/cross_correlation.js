@@ -2,10 +2,10 @@ angular.module("c.data")
 
 .factory("c.data.CrossCorrelation", ["$resource", "$q",
   function($resource, $q){
-    var Resource = $resource("/data/cross_correlations", { type: "@type", file: "@file" },{
+    var Resource = $resource(content.dataUrl("/data/cross_correlations"), { type: "@type", file: "@file" },{
       getComputed: {
         method: 'GET',
-        url: "/data/computed/bfcc/:file",
+        url: content.dataUrl("/data/computed/bfcc/:file"),
         transformResponse: function(response){
           //
           var correlation = _.map(response.split("\n"), function(l){

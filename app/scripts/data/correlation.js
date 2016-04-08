@@ -2,10 +2,10 @@ angular.module("c.data")
 
 .factory("c.data.Correlation", ["$resource", "$q",
   function($resource, $q){
-    var Resource = $resource("/data/correlations", { type: "@type", file: "@file" },{
+    var Resource = $resource(content.dataUrl("/data/correlations"), { type: "@type", file: "@file" },{
       getComputed: {
         method: 'GET',
-        url: "/data/computed/bfc/:file",
+        url: content.dataUrl("/data/computed/bfc/:file"),
         transformResponse: function(response){
           var results = response.split("\n");
 
@@ -35,7 +35,7 @@ angular.module("c.data")
       },
       get: {
         method: 'GET',
-        url: "/data/signatures/bfc/:type",
+        url: content.dataUrl("/data/signatures/bfc/:type"),
         transformResponse: function(response){
           var results = response.split("\n");
 
